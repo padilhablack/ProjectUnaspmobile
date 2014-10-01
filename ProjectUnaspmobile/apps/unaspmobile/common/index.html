@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>unaspmobile</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+<link href="jqueryMobile/jquery.mobile-git.css" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="jqueryMobile/jquery.mobile-git.js"></script>
+</head>
+<body style="display: none;">
+	<div data-role="header" id="header-menu" data-position="fixed"
+		data-fullscreen="true"
+		style="position: fixed; z-index: 9999; width: 100%; margin: 0">
+		<div class="botoes-menu">
+			<ul class="ui-grid-d ui-content">
+				<li class="ui-block-a"><a href=""
+					data-transition="slide"><img src="images/logo_mini.png"></a></li>
+				<li class="ui-block-b"><a href="#perfil"
+					data-transition="slide" data-ajax="false"><img
+						src="images/icones/user.png"></a></li>
+				<li class="ui-block-c"><a href="#notas" data-transition="slide"
+					data-ajax="false"><img src="images/icones/notas.png"></a></li>
+				<li class="ui-block-d"><a href="#financeiro"
+					data-transition="slide" data-ajax="false"><img
+						src="images/icones/financeiro.png"></a></li>
+				<li class="ui-block-e"><a href="#ramais" data-ajax="false"
+					data-transition="slide"><img src="images/icones/ramal.png"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="page" id="login">
+		<div data-role="header" id="header-login" style="z-index: 9999">
+			<div class="top-login">
+				<span class="part1">UNASP</span><span class="part2">MOBILE</span>
+				<h5>Engenheiro Coelho</h5>
+			</div>
+			<div class="back-login">
+				<img src="images/shape.png">
+			</div>
+			<div class="logo">
+				<img src="images/logo_unasp.png">
+			</div>
+		</div>
+
+		<div data-role="content" id="content-login" style="padding: 15px">
+			<form id="form" action="">
+				<label for="text">Login:</label><input type="text" name="user"
+					id="user"> <label for="text">Senha:</label><input
+					type="password" name="password" id="password"> <a href="#"
+					data-role="button" id="entrar">Entrar</a>
+			</form>
+
+		</div>
+		<div data-role="footer" data-position="fixed" id="footer-login"
+			class="header-pages">
+			<h3>Footer</h3>
+		</div>
+		<div class="bar" style="position: fixed;">
+			<a href="#"  data-role="button" data-corners="false"
+				data-shadow="false" data-iconshadow="false"></a>
+		</div>
+		
+	</div>
+	<div data-role="page" id="perfil">
+		<div data-role="header" class="header-pages" data-position="fixed"
+			style="">
+			<ul class="titulo">
+				<li><img src="images/icones/user.png"></li>
+				<li>Perfil</li>
+			</ul>
+		</div>
+		<div data-role="content" class="content-perfil">
+			<div class="indentify">
+				<ul data-role="listview" data-inset="true">
+					<li><img src="images/icones/user.png">
+						<h3 id="display-name-user"></h3>
+						<p id="display-email-user"></p></li>
+				</ul>
+			</div>
+			<div class="ui-grid-solo options" style="max-width: 400px;">
+				<div class=" ui-block-a options">
+					<div  data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" id="cursos-matriculados">
+					<h3>Cursos Matriculados</h3>
+					<ul>
+					</ul>
+					</div>
+				</div>
+				<br>
+				<div class=" ui-block-a options">
+					<div  data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+					<h3>Unasp Virtual</h3>
+					<ul>
+					<li>Sistemas Para Internet</li>
+					<li>Direito</li>
+					</ul>
+					</div>
+				</div>
+				<br>
+				<div class=" ui-block-a options">
+					<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+					<h3>Notificações</h3>
+					<ul>
+					<li>Nova Atualização</li>
+					</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div data-role="footer" data-position="fixed" id="footer-login"
+			class="header-pages">
+			<h3>Footer</h3>
+		</div>
+		<div class="bar" style="position: fixed;">
+			<a href="#"  data-role="button" data-corners="false"
+				data-shadow="false" data-iconshadow="false"></a>
+		</div>
+	</div>
+
+	<div data-role="page" id="notas">
+		<div data-role="header" id="header" data-position="fixed"
+			class="header-pages">
+			<ul class="titulo">
+				<li><img src="images/icones/notas.png"></li>
+				<li>Notas e Faltas</li>
+			</ul>
+		</div>
+		<div data-role="content" style="padding: 15px"></div>
+	<div data-role="footer" data-position="fixed" id="footer-login"
+			class="header-pages">
+			<h3>Footer</h3>
+		</div>
+		<div class="bar" style="position: fixed;">
+			<a href="#"  data-role="button" data-corners="false"
+				data-shadow="false" data-iconshadow="false"></a>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="financeiro">
+		<div data-role="header" id="header" data-position="fixed"
+			class="header-pages">
+			<ul class="titulo">
+				<li><img src="images/icones/financeiro.png"></li>
+				<li>Financeiro</li>
+			</ul>
+		</div>
+		<div data-role="content" style="padding: 15px"></div>
+	<div data-role="footer" data-position="fixed" id="footer-login"
+			class="header-pages">
+			<h3>Footer</h3>
+		</div>
+		<div class="bar" style="position: fixed;">
+			<a href="#"  data-role="button" data-corners="false"
+				data-shadow="false" data-iconshadow="false"></a>
+		</div>
+	</div>
+
+	<div data-role="page" id="ramais">
+		<div data-role="header" id="header" data-position="fixed"
+			class="header-pages">
+			<ul class="titulo">
+				<li><img src="images/icones/ramal.png"></li>
+				<li>Ramais</li>
+			</ul>
+		</div>
+		<div data-role="content" style="padding: 15px"></div>
+		<div data-role="footer" data-position="fixed" id="footer-login"
+			class="header-pages">
+			<h3>Footer</h3>
+		</div>
+		<div class="bar" style="position: fixed;">
+			<a href="#"  data-role="button" data-corners="false"
+				data-shadow="false" data-iconshadow="false"></a>
+		</div>
+	</div>
+
+
+	<script src="js/main.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="js/controller/controller-notas.js"></script>
+	<script src="js/auth.js"></script>
+	<script src="js/initOptions.js"></script>
+	<script src="js/messages.js"></script>
+</body>
+</html>

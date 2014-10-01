@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:loginConfiguration xmlns:tns="http://www.worklight.com/auth/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+		<staticResources>
+		<resource id="subscribeServlet" securityTest="SubscribeServlet">
+			<urlPatterns>/subscribeSMS*;/receiveSMS*;/ussd*</urlPatterns>
+		</resource>
+	</staticResources>
+
+
+	<securityTests>
+		<customSecurityTest name="AutenticacaoAdapter-securityTest">
+			<test realm="wl_directUpdateRealm" step="1" />
+			<test isInternalUserID="true" realm="UnaspRealm" />
+		</customSecurityTest>
+
+		<customSecurityTest name="SubscribeServlet">
+			<test realm="SubscribeServlet" isInternalUserID="true" />
+		</customSecurityTest>
+
+	</securityTests>
+
+	<realms>
+
+		<realm name="UnaspRealm" loginModule="AuthLoginModule">
+			<className>com.worklight.integration.auth.AdapterAuthenticator</className>
+			<parameter name="login-function" value="mysqlAdapter.onAuthRequired" />
+			<parameter name="logout-function" value="mysqlAdapter.onLogout" />
+		</realm>
+
+		<realm name="SampleAppRealm" loginModule="StrongDummy">
+			<className>com.worklight.core.auth.ext.FormBasedAuthenticator</className>
+		</realm>
+
+		<realm name="SubscribeServlet" loginModule="rejectAll">
+			<className>com.worklight.core.auth.ext.HeaderAuthenticator</className>
+		</realm>
+
+	</realms>
+
+	<loginModules>
+	
+		<loginModule name="AuthLoginModule">
+			<className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+
+		<loginModule name="StrongDummy">
+			<className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+
+		<loginModule name="requireLogin">
+			<className>com.worklight.core.auth.ext.SingleIdentityLoginModule</className>
+		</loginModule>
+
+		<loginModule name="rejectAll">
+			<className>com.worklight.core.auth.ext.RejectingLoginModule</className>
+		</loginModule>
+		
+	</loginModules>
+</tns:loginConfiguration>
